@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Open+Sans+Condensed&display=swap');
+
+body {
+	font-family: 'Montserrat Alternates', sans-serif;
+	padding: 20px;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+@media screen and (max-width: 800px) {
+	body {
+		padding: 10px;
+	}
+}

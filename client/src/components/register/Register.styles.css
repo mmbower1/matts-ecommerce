@@ -1,0 +1,11 @@
+.register {
+  margin: auto;
+  text-align: center;
+  width: 35vw;
+}
+@media screen and (max-width: 800px) {
+  .register {
+    margin-bottom: 50px;
+    width: 80%;
+  }
+}

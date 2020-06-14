@@ -1,0 +1,14 @@
+.edit-container {
+  margin: auto;
+  margin-top: 50px;
+  width: 80%;
+}
+.edit-container .edit-button {
+  text-align: center;
+}
+.edit-container h2 {
+  text-align: center;
+}
+.ui.menu:first-child {
+  height: 100px;
+}

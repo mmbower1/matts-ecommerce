@@ -1,0 +1,21 @@
+.edit-container {
+  margin: auto;
+  margin-top: 50px;
+  width: 80%;
+
+  .edit-button {
+    text-align: center;
+  }
+
+  h2 {
+    text-align: center;
+  }
+}
+
+// semantic element
+.ui.menu:first-child {
+  height: 100px;
+}
+//
+
+

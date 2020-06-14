@@ -1,0 +1,23 @@
+.header {
+  margin: auto;
+  width: 86%;
+}
+.ui.menu {
+  font-family: "Montserrat";
+}
+.ui.massive.menu {
+  font-size: 18px;
+}
+.ui.buttons > .ui.dropdown:last-child .menu,
+.ui.menu .right.dropdown.item .menu,
+.ui.menu .right.menu .dropdown:last-child .menu {
+  font-size: 19px;
+}
+@media screen and (max-width: 800px) {
+  .header {
+    height: 60px;
+    margin-bottom: 40px;
+    padding: 0;
+    width: 100%;
+  }
+}
