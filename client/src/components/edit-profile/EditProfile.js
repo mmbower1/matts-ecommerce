@@ -67,9 +67,6 @@ const EditProfile = ({ profile: { profile, loading }, createProfile, deleteProfi
 
   return (
     <div className='profile-form-container'>
-      <h2>
-        <i className="fas fa-user"></i>&nbsp;Edit Your Profile
-      </h2>
       <small>* = required field</small>
         <Form onSubmit={(e) => onSubmit(e)}>
           <Form.Field>

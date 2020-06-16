@@ -15,6 +15,7 @@ import { loadUser } from './actions/auth';
 import ErrorBoundary from './components/error-boundary/ErrorBoundary';
 import PrivateRoute from './components/private-route/PrivateRoute';
 import ProfileForm from './components/profile-form/ProfileForm';
+import Profiles from './components/profiles/Profiles';
 import Spinner from './components/spinner/Spinner';
 // redux
 import { store, persistor } from './store';
@@ -58,7 +59,8 @@ function App() {
                   <Route path='/auth'component={Auth} />
                   <Route exact path='/checkout' component={Checkout} />
                   <Route exact path='/edit' component={Edit} />
-                  <Route exact path='/profile' component={Profile} />
+                  <PrivateRoute exact path='/profile' component={Profile} />
+                  <Route exact path='/profiles' component={Profiles} />
                   <Route path='/shop'component={ShopPage} />
                 </Suspense>
               </ErrorBoundary>

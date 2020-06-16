@@ -31,6 +31,9 @@ const Header = ({ auth: { isAuthenticated, loading, user }, cart, logout }) => {
 
         <Menu.Menu position='right'>
           <Menu.Item>
+            <Link to='/profiles'>Buyers</Link>
+          </Menu.Item>
+          <Menu.Item>
             <CartIcon />
             {cart ? null : <Cart />}
           </Menu.Item>

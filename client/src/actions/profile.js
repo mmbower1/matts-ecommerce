@@ -2,9 +2,9 @@ import axios from 'axios';
 // actions
 import { setAlert } from './alert';
 // types
-import { GET_PROFILE, GET_PROFILES, PROFILE_ERROR, CLEAR_PROFILE, GET_REPOS } from './types';
+import { GET_PROFILE, GET_PROFILES, PROFILE_ERROR, CLEAR_PROFILE } from './types';
 // utils
-import setAuthToken from '../utils/setAuthToken';
+// import setAuthToken from '../utils/setAuthToken';
 
 // get current users profile
 export const getCurrentProfile = () => async dispatch => {
@@ -85,22 +85,6 @@ export const getProfiles = () => async dispatch => {
   }
 }
 
-// get gh repos
-export const getRepos = (username) => async dispatch => {
-  try {
-    const res = await axios.get(`profile/github/${username}`);
-    dispatch({
-      type: GET_REPOS,
-      payload: res.data
-    });
-  } catch (err) {
-    dispatch({
-      type: PROFILE_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status }
-    });
-  }
-}
-
 // delete account and profile
 export const deleteProfile = () => async dispatch => {
   if (window.confirm('Are you sure? This CANNOT be undone!')) {
@@ -116,4 +100,20 @@ export const deleteProfile = () => async dispatch => {
     }
   }
 }
+
+// get gh repos
+// export const getRepos = (username) => async dispatch => {
+//   try {
+//     const res = await axios.get(`profile/github/${username}`);
+//     dispatch({
+//       type: GET_REPOS,
+//       payload: res.data
+//     });
+//   } catch (err) {
+//     dispatch({
+//       type: PROFILE_ERROR,
+//       payload: { msg: err.response.statusText, status: err.response.status }
+//     });
+//   }
+// }
 

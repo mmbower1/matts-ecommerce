@@ -1,11 +1,11 @@
 // express
 const express = require('express');
 const router = express.Router();
+// mongo
+const User = require('../models/User');
+const Profile = require('../models/Profile');
 // middleware
 const auth = require('../middleware/auth');
-// mongo
-const Profile = require('../models/Profile');
-const User = require('../models/User');
 // npm
 const { check, validationResult } = require('express-validator');
 
@@ -14,7 +14,8 @@ const { check, validationResult } = require('express-validator');
 // @access   Private
 router.get('/me', auth, async (req, res) => {
 	try {
-    const profile = await Profile.findOne({ user: req.user.id }).populate('user', ['name', 'avatar']);
+    const profile = await Profile.findOne({ user: req.user.id }).populate('user', ['name']);
+    console.log('req.user.id: ', req.user.id)
     if (!profile) {
       return res.status(400).json({ msg: 'There is no profile for this user' });
     }
@@ -107,7 +108,7 @@ router.post(
 // @access   Public
 router.get('/', async (req, res) => {
   try {
-    const profiles = await Profile.find().populate('User', ['name', 'avatar']);
+    const profiles = await Profile.find().populate('User', ['name']);
     res.json(profiles);
   } catch (err) {
     console.error(err.message);
@@ -120,7 +121,7 @@ router.get('/', async (req, res) => {
 // @access   Public
 router.get('/user/:user_id', async (req, res) => {
   try {
-    const profile = await Profile.findOne({ user: req.params.user_id }).populate('User', ['name', 'avatar']);
+    const profile = await Profile.findOne({ user: req.params.user_id }).populate('User', ['name']);
     if (!profile) {
       return res.status(400).json({ msg: 'Profile not found'})
     }

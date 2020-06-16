@@ -7,7 +7,6 @@ import PropTypes from 'prop-types';
 import { getCurrentProfile } from '../../actions/profile';
 // components
 import Alert from '../../components/alert/Alert';
-import Header from '../../components/header/Header';
 import EditProfile from '../../components/edit-profile/EditProfile';
 import ProfileForm from '../../components/profile-form/ProfileForm';
 // semantic
@@ -38,12 +37,14 @@ const Profile = ({ getCurrentProfile, auth: { user }, profile: { profile, loadin
           </Menu.Item>
         </Menu>
       </div>
-      <h1>{user.name.charAt(0).toUpperCase() + user.name.slice(1)}'s profile</h1>
+      <h1>
+        <i className="fas fa-user"></i>&nbsp;{user.name.charAt(0).toUpperCase() + user.name.slice(1)}'s profile
+      </h1>
       <Alert />
-      {profile !== null ? 
+      {profile !== null ? (
         <div className="profile-actions">
           <EditProfile />
-        </div> : 
+        </div>) : 
         <div className="no-portfolio">
           You do not have a profile yet!
           {/* <Link to='/create-profile'>Create one</Link> */}
