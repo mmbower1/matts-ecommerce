@@ -10,7 +10,7 @@ export const loadUser = () => async dispatch => {
     setAuthToken(localStorage.token);
   }
   try {
-    const res = await axios.get('https://api.mikes-cbd.us/login');
+    const res = await axios.get('/login');
     dispatch({
       type: USER_LOADED,
       payload: res.data,
@@ -32,7 +32,7 @@ export const register = ({ name, email, phoneNumber, password, password2 }) => a
   }
   const body = JSON.stringify({ name, email, phoneNumber, password, password2 })
   try {
-    const res = await axios.post('https://api.mikes-cbd.us/register', body, config);
+    const res = await axios.post('/register', body, config);
     dispatch({
       type: REGISTER_SUCCESS,
       payload: res.data // jwt token

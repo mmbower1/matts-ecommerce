@@ -32,6 +32,7 @@ app.use(cookieParser());
 // access routes
 app.use('/login', require('./routes/login'));
 app.use('/register', require('./routes/register'));
+app.use('/profile', require('./routes/profile'));
 app.use('/stripe', require('./routes/stripe'));
 
 // heroku 

@@ -27,6 +27,7 @@ const Header = ({ auth: { isAuthenticated, loading, user }, cart, logout }) => {
         <Menu.Item>
           <Link to='/shop'>Shop</Link>
         </Menu.Item>
+        
 
         <Menu.Menu position='right'>
           <Menu.Item>
@@ -35,7 +36,8 @@ const Header = ({ auth: { isAuthenticated, loading, user }, cart, logout }) => {
           </Menu.Item>
           <Dropdown item text={isAuthenticated ? user.name : null}>
             <Dropdown.Menu>
-              <Link to="/edit"><Dropdown.Item>My Account</Dropdown.Item></Link>
+              <Link to="/profile"><Dropdown.Item>Profile</Dropdown.Item></Link>
+              <Link to="/edit"><Dropdown.Item>Account</Dropdown.Item></Link>
               <Link to="/" onClick={logout}>
                 <Dropdown.Item>
                   Logout&nbsp;<i className="fas fa-sign-out-alt"></i>

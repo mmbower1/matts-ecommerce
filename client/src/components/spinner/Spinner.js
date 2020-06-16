@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import spinner from '../../img/green-spinner.gif';
+import spinner from '../../img/rainbow-spinner2.gif';
 // import { SpinnerContainer, SpinnerOverlay } from './Spinner.styles.js';
 
 // const Spinner = WrappedComponent => {

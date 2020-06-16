@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { Button, Form } from 'semantic-ui-react';
 // actions
 import { login } from '../../actions/auth';
 import { setAlert } from '../../actions/alert';
 // components
 import './Login.styles.scss';
+// semantic
+import { Button, Form } from 'semantic-ui-react';
 
 const Login = ({ setAlert, login, isAuthenticated, user }) => {
 	const [ formData, setFormData ] = useState({

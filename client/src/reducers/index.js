@@ -7,6 +7,7 @@ import alert from './alert';
 import auth from './auth';
 import cart from './cart';
 import directory from './directory';
+import profile from './profile';
 import shop from './shop';
 import stripe from './stripe';
 // import profile from './profile';
@@ -22,6 +23,7 @@ const rootReducer = combineReducers({
   auth,
   cart,
   directory,
+  profile,
   shop,
   stripe
   // profile

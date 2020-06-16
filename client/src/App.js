@@ -13,7 +13,8 @@ import { loadUser } from './actions/auth';
 
 // components
 import ErrorBoundary from './components/error-boundary/ErrorBoundary';
-// import Header from './components/header/Header';
+import PrivateRoute from './components/private-route/PrivateRoute';
+import ProfileForm from './components/profile-form/ProfileForm';
 import Spinner from './components/spinner/Spinner';
 // redux
 import { store, persistor } from './store';
@@ -28,6 +29,7 @@ const Homepage = lazy(() => import('./containers/homepage/Homepage'));
 const Auth = lazy(() => import('./containers/auth/Auth'));
 const Checkout = lazy(() => import('./containers/checkout/Checkout'));
 const Edit = lazy(() => import('./containers/edit/Edit'));
+const Profile = lazy(() => import('./containers/profile/Profile'));
 const ShopPage = lazy(() => import('./containers/shop/Shop'));
 
 
@@ -56,6 +58,7 @@ function App() {
                   <Route path='/auth'component={Auth} />
                   <Route exact path='/checkout' component={Checkout} />
                   <Route exact path='/edit' component={Edit} />
+                  <Route exact path='/profile' component={Profile} />
                   <Route path='/shop'component={ShopPage} />
                 </Suspense>
               </ErrorBoundary>

@@ -1,53 +1,53 @@
 const INITIAL_STATE = {
   sections: [
     {
-      title: 'Tinctures',
-      imageUrl: 'https://images.unsplash.com/photo-1585216195257-1e24956105c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80',
+      title: 'Cameras',
+      imageUrl: 'https://images.unsplash.com/photo-1516571855259-d5988a8ff76e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
       size: 'small',
       id: 1,
-      linkUrl: 'shop/tinctures'
+      linkUrl: 'shop/cameras'
     },
     {
-      title: 'Edibles',
-      imageUrl: 'https://images.unsplash.com/photo-1579911098863-2324d6914c01?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80',
+      title: 'Consoles',
+      imageUrl: 'https://images.unsplash.com/photo-1507457379470-08b800bebc67?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
       size: 'small',
       id: 2,
-      linkUrl: 'shop/edibles'
+      linkUrl: 'shop/consoles'
     },
     {
-      title: 'Topicals',
-      imageUrl: 'https://images.unsplash.com/photo-1573171508396-21a51aab334b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
+      title: 'Cold Wallets',
+      imageUrl: 'https://images.unsplash.com/photo-1564241832533-49e2d87687cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
       size: 'small',
       id: 3,
-      linkUrl: 'shop/topicals'
+      linkUrl: 'shop/coldwallets'
     },
     {
-      title: 'Capsules',
-      imageUrl: 'https://images.unsplash.com/photo-1563483783233-5bada9b67dec?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80',
+      title: 'Mining Rigs',
+      imageUrl: 'https://images.unsplash.com/photo-1516245834210-c4c142787335?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
       size: 'small',
       id: 4,
-      linkUrl: 'shop/capsules'
+      linkUrl: 'shop/rigs'
     },
     {
-      title: 'Pets',
-      imageUrl: 'https://images.unsplash.com/photo-1562782441-fdc53369e894?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
+      title: 'Mobile',
+      imageUrl: 'https://images.unsplash.com/photo-1585132884271-bb39983bd2a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
       size: 'small',
       id: 6,
-      linkUrl: 'shop/pets'
+      linkUrl: 'shop/mobile'
     },
     {
-      title: 'Sleep',
-      imageUrl: 'https://images.unsplash.com/photo-1583687780174-434f85f826b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1214&q=80',
+      title: "Smart Tv's",
+      imageUrl: 'https://images.unsplash.com/photo-1560169897-fc0cdbdfa4d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
       size: 'small',
       id: 5,
-      linkUrl: 'shop/sleep'
+      linkUrl: 'shop/smart-tv'
     },
     {
-      title: 'Bundles',
-      imageUrl: 'https://images.unsplash.com/photo-1571883496609-625e2694bf76?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
+      title: 'Accessories',
+      imageUrl: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
       size: 'large',
       id: 7,
-      linkUrl: 'shop/bundles'
+      linkUrl: 'shop/laptops'
     },
   ]
 }

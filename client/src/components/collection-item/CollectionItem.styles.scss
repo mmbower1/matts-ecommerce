@@ -1,5 +1,5 @@
 .collection-item {
-  width: 22vw; // view width
+  width: 21.5vw; // view width
   display: flex;
   flex-direction: column;
   height: 350px;
@@ -24,16 +24,18 @@
     display: flex;
     height: 5%;
     justify-content: space-between;
-    font-size: 18px;
+    font-size: 17px;
     margin-bottom: 5px;
     width: 100%;
 
     .name {
       width: 90%;
       margin-bottom: 15px;
+      margin-left: 20px;
     }
 
     .price {
+      margin-right: 40px;
       width: 10%;
     }
   }

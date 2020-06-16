@@ -1,9 +1,10 @@
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
+import './Footer.styles.scss'
 
 const Footer = () => {
 	return (
-    <Grid>
+    <Grid className="footer-container">
       <Grid.Row>
         <Grid.Column>
           Based in Northern California, we take our production process seriously, knowing the quality our environment provides to the rest of the world
