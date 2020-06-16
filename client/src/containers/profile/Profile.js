@@ -6,9 +6,13 @@ import PropTypes from 'prop-types';
 // actions
 import { getCurrentProfile } from '../../actions/profile';
 // components
+import Alert from '../../components/alert/Alert';
+import Header from '../../components/header/Header';
+import EditProfile from '../../components/edit-profile/EditProfile';
 import ProfileForm from '../../components/profile-form/ProfileForm';
 // semantic
-import { Accordion, Icon } from 'semantic-ui-react';
+import { Accordion, Icon, Menu } from 'semantic-ui-react';
+import './Profile.scss';
 
 
 const Profile = ({ getCurrentProfile, auth: { user }, profile: { profile, loading }}) => {
@@ -26,10 +30,21 @@ const Profile = ({ getCurrentProfile, auth: { user }, profile: { profile, loadin
 
   return (
     <div>
-      <h1>{user.name}'s profile</h1>
+      <div className="header">
+        <Menu size='massive'>
+          <Menu.Item>
+          <i className="fas fa-long-arrow-alt-left"></i>&nbsp;
+            <Link to="/">Back</Link>
+          </Menu.Item>
+        </Menu>
+      </div>
+      <h1>{user.name.charAt(0).toUpperCase() + user.name.slice(1)}'s profile</h1>
+      <Alert />
       {profile !== null ? 
-        <div>has</div> : 
-        <div>
+        <div className="profile-actions">
+          <EditProfile />
+        </div> : 
+        <div className="no-portfolio">
           You do not have a profile yet!
           {/* <Link to='/create-profile'>Create one</Link> */}
           <Accordion>

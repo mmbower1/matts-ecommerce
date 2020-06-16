@@ -19,7 +19,7 @@ const CollectionItem = ({ add, item }) => {
       <div className="image" style={{ backgroundImage: `url(${imageUrl})`}}></div>
       <Button 
         inverted 
-        color='primary' 
+        color='blue' 
         className="checkout-button"
         onClick={() => add(item)}
       >

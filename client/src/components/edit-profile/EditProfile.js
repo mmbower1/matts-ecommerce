@@ -1,14 +1,14 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
 // actions
-import { createProfile } from '../../actions/profile';
+import { createProfile, deleteProfile, getCurrentProfile } from '../../actions/profile';
 // semantic
 import { Button, Form } from 'semantic-ui-react';
-import './ProfileForm.scss';
+import './EditProfile.scss';
 
-const ProfileForm = ({ createProfile, history }) => {
+const EditProfile = ({ profile: { profile, loading }, createProfile, deleteProfile, getCurrentProfile, history }) => {
   const [formData, setFormData] = useState({
     company: '',
     website: '',
@@ -44,13 +44,31 @@ const ProfileForm = ({ createProfile, history }) => {
 
 	const onSubmit = async (e) => {
 		e.preventDefault();
-    createProfile(formData, history)
-	};
+    createProfile(formData, history, true)
+  };
+  
+  useEffect(() => {
+    getCurrentProfile();
+    setFormData({
+      company: loading || !profile.company ? '' : profile.company,
+      website: loading || !profile.website ? '' : profile.website,
+      location: loading || !profile.location ? '' : profile.location,
+      status: loading || !profile.status ? '' : profile.status,
+      skills: loading || !profile.skills ? '' : profile.skills.join(','),
+      githubusername: loading || !profile.githubusername ? '' : profile.githubusername,
+      bio: loading || !profile.bio ? '' : profile.bio,
+      twitter: loading || !profile.twitter ? '' : profile.twitter,
+      facebook: loading || !profile.facebook ? '' : profile.facebook,
+      linkedin: loading || !profile.linkedin ? '' : profile.linkedin,
+      youtube: loading || !profile.youtube ? '' : profile.youtube,
+      instagram: loading || !profile.instagram ? '' : profile.instagram
+    })
+  }, [loading])// run when loading
 
   return (
     <div className='profile-form-container'>
       <h2>
-        <i className="fas fa-user"></i>&nbsp;Create Your Profile
+        <i className="fas fa-user"></i>&nbsp;Edit Your Profile
       </h2>
       <small>* = required field</small>
         <Form onSubmit={(e) => onSubmit(e)}>
@@ -66,8 +84,7 @@ const ProfileForm = ({ createProfile, history }) => {
               <option value="Intern">Intern</option>
               <option value="Other">Other</option>
             </select>
-            <small className="form-text"
-              >Give us an idea of where you are at in your career</small>
+            <small className="form-text">Give us an idea of where you are at in your career</small>
           </Form.Field>
           <Form.Field>
             <input 
@@ -189,14 +206,29 @@ const ProfileForm = ({ createProfile, history }) => {
           <Button inverted color='primary' className="checkout-button" onClick={() => console.log('submit')}>
               Submit
           </Button>
+          <br />
+          <br />
+          <button onClick={() => deleteProfile()}>
+            Delete
+          </button>
         </Form>
       </div>
   )
 }
 
-ProfileForm.propTypes = {
+EditProfile.propTypes = {
   createProfile: PropTypes.func.isRequired,
+  getCurrentProfile: PropTypes.func.isRequired,
+  deleteProfile: PropTypes.func.isRequired,
+  profile: PropTypes.object.isRequired,
 };
 
+const mapStateToProps = state => ({
+  profile: state.profile
+})
+
 // withRouter allows history prop access
-export default connect(null, { createProfile })(withRouter(ProfileForm));
+export default connect(mapStateToProps, { 
+  createProfile, deleteProfile, getCurrentProfile
+})(withRouter(EditProfile));
+

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 // components
+import Alert from '../../components/alert/Alert';
 import Login from '../../components/login/Login';
 import Register from '../../components/register/Register';
 // semantic
@@ -32,6 +33,7 @@ class Auth extends React.Component {
 					</Menu>
 				</div>
 				<br />
+				<Alert />
 				<div className="auth">
 					<Login />
 					<br />

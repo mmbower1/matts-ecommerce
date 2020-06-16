@@ -24,7 +24,7 @@ const Cart = ({ cartItems, history, dispatch }) => { // withRouter() gives acces
       <br />
       <Button 
         inverted 
-        color='green' 
+        color='blue' 
         className="checkout-button"
         onClick={() => {
           history.push('/checkout');

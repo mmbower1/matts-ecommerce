@@ -21,7 +21,7 @@ class ErrorBoundary extends Component {
 
   render() {
     if (this.state.hasError) {
-      return <div className="error-boundary">https://mikes-cbd.us is under construction :( Please try again later.</div>
+      return <div className="error-boundary">https://monarchtracker.com is under construction :( Please try again later.</div>
     }
     return this.props.children
   }

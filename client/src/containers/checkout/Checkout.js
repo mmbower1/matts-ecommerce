@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom';
 // style
 import './Checkout.styles.scss'
 // components
+import Alert from '../../components/alert/Alert';
 import CheckoutItem from '../../components/checkout-item/CheckoutItem';
 import Header from '../../components/header/Header';
 import Stripe from '../../components/stripe/Stripe'
@@ -20,6 +21,7 @@ const Checkout = ({ isAuthenticated, cartItems, total }) => {
   return (
     <div>
       <Header />
+      <Alert />
       <div className="checkout-page">
         <div className="checkout-header">
           <div className="header-block">

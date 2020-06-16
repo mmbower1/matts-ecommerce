@@ -4,6 +4,8 @@ import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
 // actions
 import { setAlert } from '../../actions/alert';
+// components
+import Alert from '../../components/alert/Alert';
 // styles
 import { Button, Form, Menu } from 'semantic-ui-react';
 import './Edit.styles.scss';
@@ -64,8 +66,9 @@ const Edit = ({ isAuthenticated, user }) => {
         </Menu>
       </div>
       <div className="edit-container">
-      <h2>Update account for: {user.email} </h2>
+        <h2>Update account for: {user.email} </h2>
         <br />
+        <Alert />
         <Form id="edit-page" onSubmit={onSubmit}>
           <Form.Group unstackable widths={3}>
             <Form.Input 

@@ -13,11 +13,12 @@ const Homepage = ({ loading }) => {
     <div>
       <div>
         <Header />
+        <Alert />
       </div>
       {loading === true
           ? <Spinner /> : 
         <div className="homepage">
-          <Alert />
+          
           <Directory />
           <Footer />
         </div>

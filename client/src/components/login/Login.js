@@ -22,8 +22,12 @@ const Login = ({ setAlert, login, isAuthenticated, user }) => {
 
 	const onSubmit = (e) => {
 		e.preventDefault();
-		setAlert(`Welcome`, 'success');
-		login(email, password);
+		if (user) {
+			setAlert(`Welcome`, 'success');
+			login(email, password);
+		} else {
+			setAlert('Invalid Credentials', 'danger');
+		}
 	};
 
 	// redirect if logged in

@@ -5,6 +5,7 @@ import './Shop.styles.scss';
 // containers
 import Collection from '../collection/Collection';
 // components
+import Alert from '../../components/alert/Alert';
 import CollectionOverview from '../../components/collection-overview/CollectionOverview';
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
@@ -14,6 +15,7 @@ const Shop = ({ match }) => {
   return (
     <div>
       <Header />
+      <Alert />
       <div className="shop-page">
         <Route exact path={`${match.path}`} component={CollectionOverview} />
         <Route path={`${match.path}/:collectionId`} component={Collection} />
