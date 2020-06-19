@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 // actions
 import { getProfiles } from '../../actions/profile';
 // components
-import ProfileItem from '../profile-item/ProfileItem';
-import Spinner from '../spinner/Spinner';
+import ProfileItem from '../../components/profile-item/ProfileItem';
+import Spinner from '../../components/spinner/Spinner';
 // semantic
 import { Menu } from 'semantic-ui-react';
 import './Profiles.scss';
@@ -14,7 +14,7 @@ import './Profiles.scss';
 const Profiles = ({ getProfiles, profile: { profiles, loading }}) => {
   useEffect(() => {
     getProfiles();
-  }, []) // runs once so use empty brackets
+  }, [getProfiles]) // runs once so use empty brackets
 
   return (
     <Fragment>

@@ -63,7 +63,7 @@ const EditProfile = ({ profile: { profile, loading }, createProfile, deleteProfi
       youtube: loading || !profile.youtube ? '' : profile.youtube,
       instagram: loading || !profile.instagram ? '' : profile.instagram
     })
-  }, [loading])// run when loading
+  }, [getCurrentProfile, loading])// run when loading
 
   return (
     <div className='profile-form-container'>
@@ -71,15 +71,10 @@ const EditProfile = ({ profile: { profile, loading }, createProfile, deleteProfi
         <Form onSubmit={(e) => onSubmit(e)}>
           <Form.Field>
             <select name="status" value={status} onChange={e => onChange(e)}>
-              <option value="0">* Select Professional Status</option>
-              <option value="Developer">Developer</option>
-              <option value="Junior Developer">Junior Developer</option>
-              <option value="Senior Developer">Senior Developer</option>
-              <option value="Manager">Manager</option>
-              <option value="Student or Learning">Student or Learning</option>
-              <option value="Instructor">Instructor or Teacher</option>
-              <option value="Intern">Intern</option>
-              <option value="Other">Other</option>
+              <option value="0">* Select Buyer Status</option>
+              <option value="Developer">Super Buyer $10,000-$50,000/year</option>
+              <option value="Junior Developer">Cool Buyer $1,000-$10,000/year</option>
+              <option value="Senior Developer">Junior Buyer $100-$1,000/year</option>
             </select>
             <small className="form-text">Give us an idea of where you are at in your career</small>
           </Form.Field>

@@ -15,7 +15,7 @@ import { loadUser } from './actions/auth';
 import ErrorBoundary from './components/error-boundary/ErrorBoundary';
 import PrivateRoute from './components/private-route/PrivateRoute';
 import ProfileForm from './components/profile-form/ProfileForm';
-import Profiles from './components/profiles/Profiles';
+import Profiles from './containers/profiles/Profiles';
 import Spinner from './components/spinner/Spinner';
 // redux
 import { store, persistor } from './store';

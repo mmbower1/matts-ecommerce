@@ -19,7 +19,7 @@ const Profile = ({ getCurrentProfile, auth: { user }, profile: { profile, loadin
 
   useEffect(() => {
     getCurrentProfile();
-  }, []);
+  }, [getCurrentProfile]);
 
   const handleClick = (e, titleProps) => {
     const { index } = titleProps;

@@ -89,7 +89,7 @@ export const getProfiles = () => async dispatch => {
 export const deleteProfile = () => async dispatch => {
   if (window.confirm('Are you sure? This CANNOT be undone!')) {
     try {
-      const res = await axios.delete('/profile');
+      await axios.delete('/profile');
       dispatch({ type: CLEAR_PROFILE });
       dispatch(setAlert('Your account has been permanently deleted'))
     } catch (err) {

@@ -8,6 +8,8 @@ import {
   TOGGLE_ERROR 
 } from './types';
 
+import { setAlert } from './alert';
+
 // add item
 export const addItem = item => async dispatch => {
   try {
@@ -15,7 +17,7 @@ export const addItem = item => async dispatch => {
       type: ADD_ITEM,
       payload: item
     });
-    
+    dispatch(setAlert('Item added to cart!', 'primary'));
   } catch (err) {
     alert('addItem action error: ', err)
   }
@@ -28,7 +30,7 @@ export const removeItem = item => async dispatch => {
       type: REMOVE_ITEM,
       payload: item
     });
-    
+    dispatch(setAlert('Item removed!', 'primary'));
   } catch (err) {
     alert('removeItem action error: ', err)
   }
@@ -41,7 +43,7 @@ export const removeItems = item => async dispatch => {
       type: REMOVE_ITEMS,
       payload: item
     });
-    
+    dispatch(setAlert('Items removed!', 'primary'));
   } catch (err) {
     alert('removeItem action error: ', err)
   }

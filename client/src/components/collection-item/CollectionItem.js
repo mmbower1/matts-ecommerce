@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import './CollectionItem.styles.scss';
 // actions
 import { addItem } from '../../actions/cart';
+// components
+// import Alert from '../alert/Alert';
 
 // semantic
 import { Button } from 'semantic-ui-react'
