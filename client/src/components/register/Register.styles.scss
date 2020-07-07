@@ -8,6 +8,10 @@
   // }
 }
 
+.ui, button {
+  margin-bottom: 20px;
+}
+
 @media screen and (max-width: 800px) {
 	.register {
     margin-bottom: 50px;

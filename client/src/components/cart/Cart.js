@@ -1,13 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import './Cart.styles.scss';
 // actions
 import { toggleCart } from '../../actions/cart';
 // components
 import CartItem from '../cart-item/CartItem';
 // semantic
-import { Button } from 'semantic-ui-react'
+import { Button } from 'semantic-ui-react';
+import './Cart.styles.scss';
+
 
 const Cart = ({ cartItems, history, dispatch }) => { // withRouter() gives access to history prop
   return (

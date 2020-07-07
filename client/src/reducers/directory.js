@@ -15,7 +15,7 @@ const INITIAL_STATE = {
       linkUrl: 'shop/consoles'
     },
     {
-      title: 'Cold Wallets',
+      title: 'Wallets',
       imageUrl: 'https://images.unsplash.com/photo-1564241832533-49e2d87687cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
       size: 'small',
       id: 3,

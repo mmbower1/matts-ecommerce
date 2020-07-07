@@ -8,6 +8,7 @@ import { addItem } from '../../actions/cart';
 
 // semantic
 import { Button } from 'semantic-ui-react'
+// import { setAlert } from '../../actions/alert';
 
 const CollectionItem = ({ add, item }) => {
   const { name, price, imageUrl } = item;
@@ -31,8 +32,13 @@ const CollectionItem = ({ add, item }) => {
   )
 }
 
-const mapDispatchToProps = dispatch => ({
-  add: item => dispatch(addItem(item))
+const mapStateToProps = state => ({
+  auth: state.auth
 });
 
-export default connect(null, mapDispatchToProps)(CollectionItem);
+const mapDispatchToProps = dispatch => ({
+  add: item => dispatch(addItem(item)),
+  // setAlert: alert => dispatch(setAlert(alert))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(CollectionItem);

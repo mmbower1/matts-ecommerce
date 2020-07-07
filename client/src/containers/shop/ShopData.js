@@ -99,7 +99,7 @@ const SHOP_DATA = [
   },
   {
     id: 3,
-    title: 'Cold Wallets',
+    title: 'Wallets',
     routeName: 'coldwallets',
     items: [
       {

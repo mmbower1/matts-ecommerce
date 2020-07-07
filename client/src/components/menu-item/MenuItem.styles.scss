@@ -67,8 +67,15 @@
 	}
 }
 
-// @media screen and (max-width: 800px) {
-//   .menu-item {
-//     width: 400px;
-//   }
-// }
+@media screen and (max-width: 800px) {
+	// .menu-item {
+	// 	width: 110px;
+	// }
+
+  .menu-item .content .title {
+    font-size: 12px;
+	}
+	.menu-item .content .subtitle {
+    font-size: 13px;
+  }
+}

@@ -41,7 +41,7 @@ const Stripe = ({ price }) => {
       description={`Your total is ${'$' + price}`}
       image="https://www.vidhub.co/assets/logos/vidhub-icon-2e5c629f64ced5598a56387d4e3d0c7c.png"
       label='Pay with Stripe'
-      name="Mike's CBD"
+      name="Matt's Tech E-commerce"
       shippingAddress
       panelLabel='Pay with Stripe'
       token={token => onToken(token)}

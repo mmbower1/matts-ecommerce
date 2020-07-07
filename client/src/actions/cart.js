@@ -43,7 +43,7 @@ export const removeItems = item => async dispatch => {
       type: REMOVE_ITEMS,
       payload: item
     });
-    dispatch(setAlert('Items removed!', 'primary'));
+    dispatch(setAlert('Item(s) removed!', 'primary'));
   } catch (err) {
     alert('removeItem action error: ', err)
   }
