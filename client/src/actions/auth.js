@@ -59,6 +59,7 @@ export const login = (email, password) => async dispatch => {
   }
   const body = JSON.stringify({ email, password });
   try {
+    // const res = await axios.post('https://api.monarchtracker.com/login', body, config);
     const res = await axios.post('/login', body, config);
     dispatch({
       type: LOGIN_SUCCESS,

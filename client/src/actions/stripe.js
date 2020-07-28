@@ -11,7 +11,7 @@ export const pay = ({ token, price }) => async dispatch => {
       }
     }
     const body = JSON.stringify({ token, stripePrice })
-    await axios.post('/https://api.mikes-cbd.us/stripe', body, config);
+    await axios.post('/https://api.monarchtracker.com/stripe', body, config);
     dispatch({
       type: STRIPE_SUCCESS,
       payload: token,
