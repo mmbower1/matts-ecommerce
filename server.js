@@ -1,5 +1,14 @@
 const express = require('express');// express
 const app = express();
+
+// Allow cross-origin.....
+app.use(function(req, res, next) { 
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  next();
+});
+
 const bodyParser = require('body-parser');
 const colors = require('colors');
 const connectDB = require('./config/db');

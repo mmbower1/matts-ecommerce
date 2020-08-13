@@ -9,8 +9,8 @@ import { GET_PROFILE, GET_PROFILES, PROFILE_ERROR, CLEAR_PROFILE } from './types
 // get current users profile
 export const getCurrentProfile = () => async dispatch => {
   try {
-    // const res = await axios.get('https://api.monarchtracker.com/profile/me');
-    const res = await axios.get('/profile/me');
+    const res = await axios.get('https://api.monarchtracker.com/profile/me');
+    // const res = await axios.get('/profile/me');
     dispatch({
       type: GET_PROFILE,
       payload: res.data
@@ -32,8 +32,8 @@ export const createProfile = (formData, history, edit = false) => async dispatch
         'Content-Type': 'application/json'
       }
     }
-    // const res = await axios.post('https://api.monarchtracker.com/profile', formData, config);
-    const res = await axios.get('/profile');
+    const res = await axios.post('https://api.monarchtracker.com/profile', formData, config);
+    // const res = await axios.get('/profile');
     dispatch({
       type: GET_PROFILE,
       payload: res.data
@@ -57,8 +57,8 @@ export const createProfile = (formData, history, edit = false) => async dispatch
 // get profile by id
 export const getProfileById = (userId) => async dispatch => {
   try {
-    // const res = await axios.get(`https://api.monarchtracker.com/profile/user/${userId}`);
-    const res = await axios.get(`/profile/user/${userId}`);
+    const res = await axios.get(`https://api.monarchtracker.com/profile/user/${userId}`);
+    // const res = await axios.get(`/profile/user/${userId}`);
     dispatch({
       type: GET_PROFILE,
       payload: res.data
@@ -75,8 +75,8 @@ export const getProfileById = (userId) => async dispatch => {
 export const getProfiles = () => async dispatch => {
   dispatch({ type: CLEAR_PROFILE })
   try {
-    // const res = await axios.get('https://api.monarchtracker.com/profile');
-    const res = await axios.get('/profile');
+    const res = await axios.get('https://api.monarchtracker.com/profile');
+    // const res = await axios.get('/profile');
     dispatch({
       type: GET_PROFILES,
       payload: res.data
@@ -93,8 +93,8 @@ export const getProfiles = () => async dispatch => {
 export const deleteProfile = () => async dispatch => {
   if (window.confirm('Are you sure? This CANNOT be undone!')) {
     try {
-      // await axios.delete('https://api.monarchtracker.com/profile');
-      await axios.delete('/profile');
+      await axios.delete('https://api.monarchtracker.com/profile');
+      // await axios.delete('/profile');
       dispatch({ type: CLEAR_PROFILE });
       dispatch(setAlert('Your account has been permanently deleted'))
     } catch (err) {
