@@ -1,134 +1,146 @@
-// @import "../../scss/App.scss";
+@import "../../scss/App.scss";
 
-// .book {
-// 	background-image: linear-gradient(105deg, rgba($color-white, .9) 0%, rgba($color-white, .9) 45%, transparent 20%),
-// 		url('../../img/nat-10.jpg');
-// 	background-size: 115%;
-// 	box-shadow: 0 1.5rem 4rem rbga($color-black, .2);
-// 	border-radius: 3px;
-// 	margin: 0 5rem;
+.book {
+	background-image: linear-gradient(105deg, rgba($color-white, .9) 0%, rgba($color-white, .9) 45%, transparent 20%),
+		url('../../img/chip.png');
+	background-size: 115%;
+	box-shadow: 0 1.5rem 4rem rbga($color-black, .2);
+	border-radius: 3px;
+	margin: 0 5rem;
 
-// 	@include respond(tab-land) {
-// 		background-image: linear-gradient(
-// 				105deg,
-// 				rgba($color-white, .9) 0%,
-// 				rgba($color-white, .9) 65%,
-// 				transparent 65%
-// 			),
-// 			url('../../img/nat-10.jpg');
-// 		background-size: cover;
-// 		margin: 0 -1rem;
-// 	}
+	@include respond(tab-land) {
+		background-image: linear-gradient(
+				105deg,
+				rgba($color-white, .9) 0%,
+				rgba($color-white, .9) 56%,
+				transparent 65%
+			),
+			url('../../img/chip.png');
+		background-size: cover;
+		margin: 0;
+	}
 
-// 	@include respond(tab-port) {
-// 		background-image: linear-gradient(
-// 				to right,
-// 				rgba($color-white, .9) 0%,
-// 				rgba($color-white, .9) 100%,
-// 				transparent 65%
-// 			),
-// 			url('../../img/nat-10.jpg');
-// 		background-size: cover;
-// 	}
+	@include respond(tab-port) {
+		background-image: linear-gradient(
+				to right,
+				rgba($color-white, .9) 0%,
+				rgba($color-white, .9) 74%,
+				transparent 65%
+			),
+			url('../../img/chip.png');
+		background-size: cover;
+	}
 
-// 	&__form {
-// 		padding: 6rem;
-// 		position: relative;
-// 		width: 50%;
+	&__form {
+		padding: 9rem;
+		position: relative;
+		width: 60%;
 
-// 		.subscribe-button {
-// 			background-color: $color-primary-dark; /* Green */
-// 			border: none;
-// 			color: white;
-// 			cursor: pointer;
-// 			display: inline-block;
-// 			font-size: 16px;
-// 			margin-top: 1rem;
-// 			padding: 13px 30px;
-// 			text-align: center;
-// 			text-decoration: none;
-// 		}
-// 	}
+		.subscribe-button {
+			background-color: $color-primary-dark; /* Green */
+			border: none;
+			color: white;
+			cursor: pointer;
+			display: inline-block;
+			font-size: 16px;
+			margin-top: 1rem;
+			padding: 13px 30px;
+			text-align: center;
+			text-decoration: none;
+		}
+	}
 
-// 	@include respond(tab-land) {
-// 		width: 65%;
-// 	}
+	@include respond(tab-land) {
+		margin: 0 auto;
+		// text-align: center;
+		width: 95%;
+	}
 
-// 	@include respond(tab-port) {
-// 		width: 100%;
-// 	}
+	@include respond(tab-port) {
+		width: 100%;
+	}
 
-// 	h4 {
-// 		cursor: pointer;
-// 		font-size: 20px;
-// 		position: absolute;
-// 		top: 36.5rem;
-// 		right: 39.5rem;
-// 	}
-// }
+	h4 {
+		cursor: pointer;
+		font-size: 20px;
+		position: absolute;
+		top: 36.5rem;
+		right: 39.5rem;
+	}
 
-// .form {
-// 	&__group:not(:last-child) {
-// 		margin-bottom: 2rem;
-// 	}
+	.subscription-header {
+		font-size: 2.8rem;
+		margin-bottom: 3rem;
 
-// 	&__input {
-// 		background-color: rgba($color-white, .5);
-// 		border-bottom: 3px solid transparent;
-// 		border-radius: 2px;
-// 		border: none;
-// 		color: inherit;
-// 		display: block;
-// 		font-size: 1.5rem;
-// 		// font-family: inherit;
-// 		padding: 1.5rem 2rem;
-// 		transition: all .3s;
-// 		width: 90%;
+		@include respond(phone) {
+			text-align: center;
+			// position: fixed;
+		}
+	}
+}
 
-// 		@include respond(tab-port) {
-// 			margin: 0 -1rem;
-// 			width: 400%;
-// 		}
+.form {
+	&__group:not(:last-child) {
+		margin-bottom: 2rem;
+	}
 
-// 		&:focus {
-// 			box-shadow: 0 1rem 2rem rbga($color-black, .1);
-// 			border-bottom: 3px solid $color-primary;
-// 			outline: none;
-// 		}
+	&__input {
+		background-color: rgba($color-white, .5);
+		border-bottom: 3px solid transparent;
+		border-radius: 2px;
+		border: none;
+		color: inherit;
+		display: block;
+		font-size: 1.5rem;
+		// font-family: inherit;
+		padding: 1.5rem 2rem;
+		transition: all .3s;
+		width: 90%;
 
-// 		&:focus:invalid {
-// 			border-bottom: 3px solid $color-primary-orange;
-// 		}
+		@include respond(tab-port) {
+			margin: 0 -1rem;
+			width: 400%;
+		}
 
-// 		&::-webkit-input-placeholder {
-// 			color: $color-grey-dark-2;
-// 		}
-// 	}
+		&:focus {
+			box-shadow: 0 1rem 2rem rbga($color-black, .1);
+			border-bottom: 3px solid $color-primary;
+			outline: none;
+		}
 
-// 	&__label {
-// 		display: block;
-// 		font-size: 1.2rem;
-// 		margin-left: 1rem;
-// 		transition: all .3s;
+		&:focus:invalid {
+			border-bottom: 3px solid $color-primary-orange;
+		}
 
-// 		@include respond(tab-port) {
-// 			font-family: 'Overpass', sans-serif;
-// 			font-weight: 800;
-// 		}
-// 	}
+		&::-webkit-input-placeholder {
+			color: $color-grey-dark-2;
+		}
+	}
 
-// 	&__input:placeholder-shown + &__label {
-// 		opacity: 0;
-// 		transform: translateY(-4rem);
-// 		visibility: hidden;
-// 	}
-// }
+	&__label {
+		display: block;
+		font-size: 1.2rem;
+		margin-left: 1rem;
+		transition: all .3s;
 
-// .section-book {
-// 	background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
-// 	padding: 5rem 0;
+		@include respond(tab-port) {
+			font-family: 'Overpass', sans-serif;
+			font-weight: 800;
+		}
+	}
 
-// 	@include respond(tab-port) {
-// 		padding: 10rem 0;
-// 	}
-// }
+	&__input:placeholder-shown + &__label {
+		opacity: 0;
+		transform: translateY(-4rem);
+		visibility: hidden;
+	}
+}
+
+.section-book {
+	background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+	padding: 5rem 0;
+
+	@include respond(tab-port) {
+		padding: 2rem 0;
+	}
+}

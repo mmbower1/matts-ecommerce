@@ -35,8 +35,8 @@ const Subscription = ({ subscribe }) => {
           <div className="book__form">
             <form action="#" className="form" onSubmit={(e) => onSubmit(e)}>
               <div className="u-margin-bottom-medium">
-                <h2 className="heading-secondary">
-                  Subscribe now!
+                <h2 className="subscription-header">
+                  Get all latest deals!
                 </h2>
               </div>
               <div className="form__group">
