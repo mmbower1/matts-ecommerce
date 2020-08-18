@@ -33,6 +33,11 @@ export const UPDATE_PROFILE = 'UPDATE_PROFILE';
 export const CLEAR_PROFILE = 'CLEAR_PROFILE';
 export const GET_REPOS = 'GET_REPOS';
 
+// SUBSCRIPTION
+////////////////////////////////////////////////////////////////////
+export const SUBSCRIPTION_SUCCESS = 'SUBSCRIPTION_SUCCESS';
+export const SUBSCRIPTION_FAIL = 'SUBSCRIPTION_FAIL';
+
 // STRIPE
 ////////////////////////////////////////////////////////////////////
 export const STRIPE_SUCCESS = 'STRIPE_SUCCESS';

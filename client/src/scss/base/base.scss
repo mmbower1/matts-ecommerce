@@ -1,0 +1,53 @@
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  // position: relative;
+  font-size: 62.5%;
+  @include respond(tab-land) { // width < 1200px
+    font-size: 56.25%;
+  }
+  @include respond(tab-port) { // width < 900px
+    font-size: 50%;
+  }
+  @include respond(big-desktop) { 
+    font-size: 75%;
+  }
+}
+
+// body {
+//   box-sizing: border-box;
+//   font-family: 'Concert One', cursive;
+//   font-size: 20px;
+//   line-height: 1.7;
+//   text-align: center;
+
+
+//   ::before {  
+//     content: "";
+//     background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('../../img/pokewallpaper.png');
+//     background-position: top;
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     // opacity: 0.1;
+//     top: 0;
+//     left: 0;
+//     bottom: 0;
+//     right: 0;
+//     position: absolute;
+//     z-index: -1;  
+
+//     ::after {
+//       background-color: rgba(0, 0, 0, 0.7);  
+//     }
+//   }
+
+//   @include respond(tab-port) { 
+//     padding: 0;
+//   }
+// }

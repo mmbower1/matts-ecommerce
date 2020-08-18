@@ -1,0 +1,59 @@
+@import '../../scss/App.scss';
+
+.modal {
+	background-color: rgba($color-black, .8);
+	height: 100vh;
+	position: fixed;
+	left: 0;
+	top: 0;
+	opacity: 0;
+	visibility: hidden;
+	transition: all .3;
+	width: 100%;
+	z-index: 9999;
+
+	&:target {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&:target &__content {
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(1);
+	}
+
+	&__close {
+		&:link,
+		&:visited {
+			color: black;
+			display: inline-block;
+			font-size: 4rem;
+			line-height: 1;
+			position: absolute;
+			top: 1.1rem;
+			right: 2.5rem;
+			text-decoration: none;
+		}
+
+		:hover {
+			color: $color-primary;
+			transition: all .2s;
+		}
+	}
+
+	&__content {
+		@include absoluteCenter;
+		background-color: $color-white;
+		border-radius: 3px;
+		box-shadow: 0 2rem 4rem rgba($color-black, .2);
+		height: 50rem;
+		opacity: 0;
+		transform: translate(-50%, -50%) scale(.5);
+		transition: all .3s;
+		width: 90%;
+
+		@include respond(phone) {
+			width: 95%;
+		}
+	}
+}

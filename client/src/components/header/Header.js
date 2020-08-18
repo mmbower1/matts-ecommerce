@@ -8,6 +8,7 @@ import { logout } from '../../actions/auth';
 // components
 import Cart from '../cart/Cart';
 import CartIcon from '../cart-icon/CartIcon';
+import Modal from '../modal/Modal';
 // style
 import './Header.styles.scss';
 import { Dropdown, Menu } from 'semantic-ui-react';
@@ -27,6 +28,9 @@ const Header = ({ auth: { isAuthenticated, loading, user }, cart, logout }) => {
         <Menu.Item>
           <Link to='/shop'>Shop</Link>
         </Menu.Item>
+        {/* <Menu.Item>
+          <Link to='/shop'>Subscribe</Link>
+        </Menu.Item> */}
         
 
         <Menu.Menu position='right'>
@@ -62,6 +66,10 @@ const Header = ({ auth: { isAuthenticated, loading, user }, cart, logout }) => {
         <Menu.Item>
           <Link to='/shop'>Shop</Link>
         </Menu.Item>
+        <Menu.Item href="#modal">Subscribe
+          <Modal />
+        </Menu.Item>
+        
 
         <Menu.Menu position='right'>
           <Menu.Item>
