@@ -15,7 +15,10 @@ import stripe from './stripe';
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['cart']
+  whitelist: [
+    // 'auth'
+  , 'cart'
+]
 }
 
 const rootReducer = combineReducers({

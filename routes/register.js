@@ -29,11 +29,30 @@ router.post(
     check('password2', 'Please enter a password with 6 or more characters').isLength({ min: 6 }),
   ],
   async (req, res) => {
+    let body;
+    // try {
+    //   body = JSON.parse(req.body);
+    // } catch (e) {
+    //   console.log(`error parsing: ${e}`);
+    // }
+    
+    // console.log("Processing incoming data");
+    console.log("type of: " + typeof req.body);
+    console.log("req.body: " + JSON.stringify(req.body));
+    console.log("req.body.name: " + req.body.name);
+
+    console.log("type of body: " + typeof body);
+    console.log("body: " + JSON.stringify(body));
+    console.log("body.name: " + body.name);
+
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
+      console.log("Error encountered router post register");
+      console.log(`errors array ${JSON.stringify(errors.array()[0])}`);
       return res.status(400).json({ errors: errors.array() })
     }
     const { name, email, phoneNumber, password, password2 } = req.body;
+    console.log("Name from the front end: " + name);
     try {
       // see if email already exists
       let user = await User.findOne({ email }, { unqiue: true });

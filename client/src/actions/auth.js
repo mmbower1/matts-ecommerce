@@ -11,6 +11,7 @@ export const loadUser = () => async dispatch => {
   }
   try {
     const res = await axios.get('https://api.monarchtracker.com/login');
+    // const res = await axios.get('/login');
     dispatch({
       type: USER_LOADED,
       payload: res.data,
@@ -27,12 +28,16 @@ export const loadUser = () => async dispatch => {
 export const register = ({ name, email, phoneNumber, password, password2 }) => async dispatch => {
   const config = {
     headers: {
+      // 'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+      // 'Accept': 'application/json',
       'Content-Type': 'application/json'
     }
   }
   const body = JSON.stringify({ name, email, phoneNumber, password, password2 })
+  //const body = { name, email, phoneNumber, password, password2 }
   try {
     const res = await axios.post('https://api.monarchtracker.com/register', body, config);
+    // const res = await axios.post('/register', body, config);
     dispatch({
       type: REGISTER_SUCCESS,
       payload: res.data // jwt token
@@ -42,7 +47,7 @@ export const register = ({ name, email, phoneNumber, password, password2 }) => a
   } catch (err) {
     // const errors = err.response.data.errors;
     if (err) {
-      console.log(err);
+      console.log(`Error in register: ${err}`);
     }
     dispatch({
       type: REGISTER_FAIL
@@ -59,8 +64,8 @@ export const login = (email, password) => async dispatch => {
   }
   const body = JSON.stringify({ email, password });
   try {
-    // const res = await axios.post('https://api.monarchtracker.com/login', body, config);
     const res = await axios.post('https://api.monarchtracker.com/login', body, config);
+    // const res = await axios.post('/login', body, config);
     dispatch({
       type: LOGIN_SUCCESS,
       payload: res.data // jwt token

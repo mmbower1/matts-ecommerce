@@ -1,6 +1,5 @@
 const express = require('express');// express
 const app = express();
-
 // Allow cross-origin.....
 app.use(function(req, res, next) { 
   res.header("Access-Control-Allow-Origin", "*");
@@ -8,16 +7,21 @@ app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
   next();
 });
-
 const bodyParser = require('body-parser');
 const colors = require('colors');
+var cors = require('cors')
 const connectDB = require('./config/db');
 const dotenv = require('dotenv');
 const errorHandler = require('./middleware/error');
 const cookieParser = require('cookie-parser');
+const morgan = require('morgan');
 const path = require('path');
 var PORT = process.env.PORT || 5000;
 dotenv.config({ path: './config/config.env' });
+
+// Blocked by CORS policy: Request header field x-auth-token is not 
+// allowed by Access-Control-Allow-Headers in preflight response.
+app.use(cors())
 
 // connect mongo
 connectDB();
@@ -35,8 +39,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // init middleware
 app.use(express.json({ extended: false }));
 
+// shows logs of user activity in terminal.
+app.use(morgan("dev"));
+
 // cookie parser
 app.use(cookieParser());
+
+app.use(function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
 
 // access routes
 app.use('/login', require('./routes/login'));
