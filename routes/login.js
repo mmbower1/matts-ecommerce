@@ -60,7 +60,7 @@ router.post(
 				}
 			};
 			// set to 3600 (1 hr) in production
-			jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: 360 }, (err, token) => {
+			jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: 360000 }, (err, token) => {
 				if (err) throw err;
 				res.json({ token });
 			});

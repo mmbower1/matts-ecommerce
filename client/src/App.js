@@ -54,7 +54,7 @@ function App() {
               <ErrorBoundary>
                 <Suspense fallback={<Spinner />}>
                   <Route exact path='/' component={Homepage} />
-                  <Route exact path='/auth'component={Auth} />
+                  <Route exact path='/auth' component={Auth} />
                   <PrivateRoute exact path='/checkout' component={Checkout} />
                   <PrivateRoute exact path='/edit' component={Edit} />
                   <PrivateRoute exact path='/profile' component={Profile} />
