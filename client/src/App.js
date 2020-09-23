@@ -60,6 +60,7 @@ function App() {
                   <PrivateRoute exact path='/profile' component={Profile} />
                   <PrivateRoute exact path='/profiles' component={Profiles} />
                   <Route exact path='/shop'component={ShopPage} />
+                  <Route exact path='/shop/:type'component={ShopPage} />
                 </Suspense>
               </ErrorBoundary>
             </Switch>

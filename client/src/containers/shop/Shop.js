@@ -11,14 +11,18 @@ import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
 
 // shop is a nested route in app.js so we have access to these props
-const Shop = ({ match }) => {
+const Shop = ({ collections, match }) => {
+  
+  console.log(`Shop page type ${match.params.type}`);
   return (
     <div>
       <Header />
       <Alert />
       <div className="shop-page">
-        <Route exact path={`${match.path}`} component={CollectionOverview} />
-        <Route path={`${match.path}/:collectionId`} component={Collection} />
+        {console.log(`collections ${typeof collections}`)}
+        {console.log(`collections.length ${collections.length}`)}
+        <Route exact path="/shop" component={CollectionOverview} />
+        <Route exact path="/shop/:collectionId" render={() => <Collection type={match.params.type} collection={collections} />} />
         <Footer />
       </div>
       
